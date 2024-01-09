@@ -16,6 +16,13 @@
 		98B40C602B4D7C02009D55AE /* RestaurantAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C5F2B4D7C02009D55AE /* RestaurantAppTests.swift */; };
 		98B40C6A2B4D7C02009D55AE /* RestaurantAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C692B4D7C02009D55AE /* RestaurantAppUITests.swift */; };
 		98B40C6C2B4D7C02009D55AE /* RestaurantAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C6B2B4D7C02009D55AE /* RestaurantAppUITestsLaunchTests.swift */; };
+		98B40C8A2B4D85FD009D55AE /* Ingredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C842B4D85FD009D55AE /* Ingredient+CoreDataClass.swift */; };
+		98B40C8B2B4D85FD009D55AE /* Ingredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C852B4D85FD009D55AE /* Ingredient+CoreDataProperties.swift */; };
+		98B40C8C2B4D85FD009D55AE /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C862B4D85FD009D55AE /* Item+CoreDataClass.swift */; };
+		98B40C8D2B4D85FD009D55AE /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C872B4D85FD009D55AE /* Item+CoreDataProperties.swift */; };
+		98B40C8E2B4D85FD009D55AE /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C882B4D85FD009D55AE /* Category+CoreDataClass.swift */; };
+		98B40C8F2B4D85FD009D55AE /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C892B4D85FD009D55AE /* Category+CoreDataProperties.swift */; };
+		98B40C922B4D8807009D55AE /* StartMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C912B4D8807009D55AE /* StartMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,13 @@
 		98B40C652B4D7C02009D55AE /* RestaurantAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B40C692B4D7C02009D55AE /* RestaurantAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAppUITests.swift; sourceTree = "<group>"; };
 		98B40C6B2B4D7C02009D55AE /* RestaurantAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		98B40C842B4D85FD009D55AE /* Ingredient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98B40C852B4D85FD009D55AE /* Ingredient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		98B40C862B4D85FD009D55AE /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98B40C872B4D85FD009D55AE /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		98B40C882B4D85FD009D55AE /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98B40C892B4D85FD009D55AE /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		98B40C912B4D8807009D55AE /* StartMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,7 @@
 		98B40C3D2B4D7C00009D55AE = {
 			isa = PBXGroup;
 			children = (
+				98B40C902B4D8613009D55AE /* CoreData */,
 				98B40C482B4D7C00009D55AE /* RestaurantApp */,
 				98B40C5E2B4D7C02009D55AE /* RestaurantAppTests */,
 				98B40C682B4D7C02009D55AE /* RestaurantAppUITests */,
@@ -99,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				98B40C492B4D7C00009D55AE /* RestaurantAppApp.swift */,
+				98B40C912B4D8807009D55AE /* StartMenuView.swift */,
 				98B40C4B2B4D7C00009D55AE /* ContentView.swift */,
 				98B40C4D2B4D7C02009D55AE /* Assets.xcassets */,
 				98B40C522B4D7C02009D55AE /* Persistence.swift */,
@@ -131,6 +147,19 @@
 				98B40C6B2B4D7C02009D55AE /* RestaurantAppUITestsLaunchTests.swift */,
 			);
 			path = RestaurantAppUITests;
+			sourceTree = "<group>";
+		};
+		98B40C902B4D8613009D55AE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				98B40C842B4D85FD009D55AE /* Ingredient+CoreDataClass.swift */,
+				98B40C852B4D85FD009D55AE /* Ingredient+CoreDataProperties.swift */,
+				98B40C862B4D85FD009D55AE /* Item+CoreDataClass.swift */,
+				98B40C872B4D85FD009D55AE /* Item+CoreDataProperties.swift */,
+				98B40C882B4D85FD009D55AE /* Category+CoreDataClass.swift */,
+				98B40C892B4D85FD009D55AE /* Category+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +292,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B40C8B2B4D85FD009D55AE /* Ingredient+CoreDataProperties.swift in Sources */,
+				98B40C922B4D8807009D55AE /* StartMenuView.swift in Sources */,
 				98B40C562B4D7C02009D55AE /* RestaurantApp.xcdatamodeld in Sources */,
+				98B40C8D2B4D85FD009D55AE /* Item+CoreDataProperties.swift in Sources */,
 				98B40C532B4D7C02009D55AE /* Persistence.swift in Sources */,
 				98B40C4C2B4D7C00009D55AE /* ContentView.swift in Sources */,
+				98B40C8A2B4D85FD009D55AE /* Ingredient+CoreDataClass.swift in Sources */,
 				98B40C4A2B4D7C00009D55AE /* RestaurantAppApp.swift in Sources */,
+				98B40C8F2B4D85FD009D55AE /* Category+CoreDataProperties.swift in Sources */,
+				98B40C8E2B4D85FD009D55AE /* Category+CoreDataClass.swift in Sources */,
+				98B40C8C2B4D85FD009D55AE /* Item+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
