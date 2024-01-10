@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		98B40C4A2B4D7C00009D55AE /* RestaurantAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C492B4D7C00009D55AE /* RestaurantAppApp.swift */; };
-		98B40C4C2B4D7C00009D55AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C4B2B4D7C00009D55AE /* ContentView.swift */; };
 		98B40C4E2B4D7C02009D55AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B40C4D2B4D7C02009D55AE /* Assets.xcassets */; };
 		98B40C512B4D7C02009D55AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B40C502B4D7C02009D55AE /* Preview Assets.xcassets */; };
 		98B40C532B4D7C02009D55AE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C522B4D7C02009D55AE /* Persistence.swift */; };
@@ -23,6 +22,10 @@
 		98B40C8E2B4D85FD009D55AE /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C882B4D85FD009D55AE /* Category+CoreDataClass.swift */; };
 		98B40C8F2B4D85FD009D55AE /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C892B4D85FD009D55AE /* Category+CoreDataProperties.swift */; };
 		98B40C922B4D8807009D55AE /* StartMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C912B4D8807009D55AE /* StartMenuView.swift */; };
+		98B40C942B4E22B8009D55AE /* ClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C932B4E22B8009D55AE /* ClientsView.swift */; };
+		98B40C962B4E22C9009D55AE /* EmployeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C952B4E22C9009D55AE /* EmployeesView.swift */; };
+		98B40C982B4E268D009D55AE /* startMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C972B4E268D009D55AE /* startMenuViewModel.swift */; };
+		98B40C9C2B4F2618009D55AE /* textExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C9B2B4F2618009D55AE /* textExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +48,6 @@
 /* Begin PBXFileReference section */
 		98B40C462B4D7C00009D55AE /* RestaurantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B40C492B4D7C00009D55AE /* RestaurantAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAppApp.swift; sourceTree = "<group>"; };
-		98B40C4B2B4D7C00009D55AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98B40C4D2B4D7C02009D55AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98B40C502B4D7C02009D55AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98B40C522B4D7C02009D55AE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -62,6 +64,10 @@
 		98B40C882B4D85FD009D55AE /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		98B40C892B4D85FD009D55AE /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98B40C912B4D8807009D55AE /* StartMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuView.swift; sourceTree = "<group>"; };
+		98B40C932B4E22B8009D55AE /* ClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsView.swift; sourceTree = "<group>"; };
+		98B40C952B4E22C9009D55AE /* EmployeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesView.swift; sourceTree = "<group>"; };
+		98B40C972B4E268D009D55AE /* startMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startMenuViewModel.swift; sourceTree = "<group>"; };
+		98B40C9B2B4F2618009D55AE /* textExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,13 +119,16 @@
 		98B40C482B4D7C00009D55AE /* RestaurantApp */ = {
 			isa = PBXGroup;
 			children = (
-				98B40C492B4D7C00009D55AE /* RestaurantAppApp.swift */,
+				98B40C952B4E22C9009D55AE /* EmployeesView.swift */,
+				98B40C932B4E22B8009D55AE /* ClientsView.swift */,
+				98B40C9B2B4F2618009D55AE /* textExtensions.swift */,
 				98B40C912B4D8807009D55AE /* StartMenuView.swift */,
-				98B40C4B2B4D7C00009D55AE /* ContentView.swift */,
+				98B40C492B4D7C00009D55AE /* RestaurantAppApp.swift */,
 				98B40C4D2B4D7C02009D55AE /* Assets.xcassets */,
 				98B40C522B4D7C02009D55AE /* Persistence.swift */,
 				98B40C542B4D7C02009D55AE /* RestaurantApp.xcdatamodeld */,
 				98B40C4F2B4D7C02009D55AE /* Preview Content */,
+				98B40C972B4E268D009D55AE /* startMenuViewModel.swift */,
 			);
 			path = RestaurantApp;
 			sourceTree = "<group>";
@@ -294,12 +303,15 @@
 			files = (
 				98B40C8B2B4D85FD009D55AE /* Ingredient+CoreDataProperties.swift in Sources */,
 				98B40C922B4D8807009D55AE /* StartMenuView.swift in Sources */,
+				98B40C982B4E268D009D55AE /* startMenuViewModel.swift in Sources */,
 				98B40C562B4D7C02009D55AE /* RestaurantApp.xcdatamodeld in Sources */,
+				98B40C9C2B4F2618009D55AE /* textExtensions.swift in Sources */,
+				98B40C942B4E22B8009D55AE /* ClientsView.swift in Sources */,
 				98B40C8D2B4D85FD009D55AE /* Item+CoreDataProperties.swift in Sources */,
 				98B40C532B4D7C02009D55AE /* Persistence.swift in Sources */,
-				98B40C4C2B4D7C00009D55AE /* ContentView.swift in Sources */,
 				98B40C8A2B4D85FD009D55AE /* Ingredient+CoreDataClass.swift in Sources */,
 				98B40C4A2B4D7C00009D55AE /* RestaurantAppApp.swift in Sources */,
+				98B40C962B4E22C9009D55AE /* EmployeesView.swift in Sources */,
 				98B40C8F2B4D85FD009D55AE /* Category+CoreDataProperties.swift in Sources */,
 				98B40C8E2B4D85FD009D55AE /* Category+CoreDataClass.swift in Sources */,
 				98B40C8C2B4D85FD009D55AE /* Item+CoreDataClass.swift in Sources */,

@@ -6,13 +6,42 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct StartMenuView: View {
+    @Environment(\.managedObjectContext) private var viewContext 
+    
+    @Namespace private var animation
+    @StateObject var viewModel = startMenuModel()
+    
+    let screensize = UIScreen.main.bounds.size.width
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        HStack(spacing:0){
+            if viewModel.currentState != .clients{
+                EmployeesView()
+                    .transition(.move(edge: .leading))
+                    
+            }
+            if viewModel.currentState != .employees{
+                ClientsView()
+                    .transition(.move(edge: .trailing))
+                    
+            }
+            
+                
+        }
+        
+       
+        
+        .environmentObject(viewModel)
     }
 }
 
 #Preview {
-    StartMenuView()
+    StartMenuView().environment(\.managedObjectContext,PersistenceController.preview.container.viewContext)
+        
 }
+
