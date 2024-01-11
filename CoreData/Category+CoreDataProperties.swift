@@ -26,10 +26,10 @@ extension Category {
 extension Category {
 
     @objc(addMenu_itemObject:)
-    @NSManaged public func addToMenu_item(_ value: Item)
+    @NSManaged public func addToMenu_item(_ value: MenuItem)
 
     @objc(removeMenu_itemObject:)
-    @NSManaged public func removeFromMenu_item(_ value: Item)
+    @NSManaged public func removeFromMenu_item(_ value: MenuItem)
 
     @objc(addMenu_item:)
     @NSManaged public func addToMenu_item(_ values: NSSet)

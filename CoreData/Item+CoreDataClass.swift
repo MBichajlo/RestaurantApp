@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class Item: NSManagedObject {
+public class MenuItem: NSManagedObject {
 
 }

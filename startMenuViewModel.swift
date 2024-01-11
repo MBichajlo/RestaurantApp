@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CoreData
+
 
 enum  viewStates{
     case menu
@@ -16,7 +16,7 @@ enum  viewStates{
 
 
 @MainActor class startMenuModel:ObservableObject{
-    private let context=PersistenceController.shared.container.viewContext
+   
     
     @Published var currentState:viewStates = .menu
     

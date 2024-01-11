@@ -8,15 +8,17 @@
 import SwiftUI
 import CoreData 
 struct EmployeesView: View {
-    @EnvironmentObject var viewModel:startMenuModel
+    @EnvironmentObject var topViewModel:startMenuModel
+    @StateObject var viewModel = EmployeesViewModel()
+    
     
     let screensize=UIScreen.main.bounds.size.width
     var body: some View {
         ZStack{
             Color.customLightBlue
                 .ignoresSafeArea()
-            VStack{
-                HStack{
+            VStack(){
+                HStack{//Navigation Bar
                     Button {
                         
                     } label: {
@@ -26,7 +28,7 @@ struct EmployeesView: View {
                             .foregroundColor(.white)
                             .frame(width: 30,height: 30)
                             .padding(.leading)
-                    }.opacity(viewModel.currentState == .employees ? 1:0)
+                    }.opacity(topViewModel.currentState == .employees ? 1:0)
                         //.animation(.default, value: viewModel.currentState)
                     Spacer()
                     Text("LOGIN")
@@ -34,7 +36,14 @@ struct EmployeesView: View {
                         
                     Spacer()
                     Button(action: {
-                        viewModel.returnToMenu()
+                        withAnimation(.default, {
+                            viewModel.state = .none
+                        },completion:{
+                            withAnimation(.default) {
+                                topViewModel.returnToMenu()
+                            }
+                        })
+                        
                     }, label: {
                         Image(systemName: "house")
                             .resizable()
@@ -42,23 +51,49 @@ struct EmployeesView: View {
                             .foregroundStyle(.white)
                             .frame(width: 30,height: 25)
                             .padding(.trailing)
-                    }).opacity(viewModel.currentState == .employees ? 1:0)
+                    }).opacity(topViewModel.currentState == .employees ? 1:0)
                         //.animation(.default, value: viewModel.currentState)
                         
                     
                 
-                }
+                }//Navigation Bar
+                
                 Spacer()
+                
+                if viewModel.state == .login && topViewModel.currentState == .employees {
+                    VStack {
+                        TextField("Username", text: $viewModel.username)
+                            .padding(10)
+                            .background(Color.white.opacity(0.3))
+                            .cornerRadius(13)
+                        SecureField("Password", text: $viewModel.password)
+                            .padding(10)
+                            .background(Color.white.opacity(0.3))
+                            .cornerRadius(13)
+                            
+                    }
+                    
+                    .frame(width: 300,alignment: .center)
+                    
+                    
+                }
+                
+                Spacer()
+                
             }
         }
-        .frame(width: viewModel.currentState == .employees ? screensize: screensize/2)
+        .frame(width: topViewModel.currentState == .employees ? screensize: screensize/2)
         .onTapGesture {
             withAnimation(.smooth, {
-                viewModel.switchStates(self)
+                topViewModel.switchStates(self)
+            },completion: {
+                withAnimation(.default) {
+                    viewModel.state = .login
+                }
             })
             
         }
-        .animation(.default,value: viewModel.currentState)
+        
         
     }
 }

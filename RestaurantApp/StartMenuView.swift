@@ -19,24 +19,29 @@ struct StartMenuView: View {
     
     var body: some View {
         
-        HStack(spacing:0){
-            if viewModel.currentState != .clients{
-                EmployeesView()
-                    .transition(.move(edge: .leading))
-                    
-            }
-            if viewModel.currentState != .employees{
-                ClientsView()
-                    .transition(.move(edge: .trailing))
-                    
-            }
-            
+        ZStack {
+            HStack(spacing:0){
+                if viewModel.currentState != .clients{
+                    EmployeesView()
+                        .transition(.move(edge: .leading))
+                        
+                }
                 
+                if viewModel.currentState != .employees{
+                    ClientsView()
+                        .transition(.move(edge: .trailing))
+                        
+                }
+                
+                    
+            }.environmentObject(viewModel)
+            if viewModel.currentState == .menu {
+                Text("Restaurant App")
+            }
+           
+            
+            
         }
-        
-       
-        
-        .environmentObject(viewModel)
     }
 }
 

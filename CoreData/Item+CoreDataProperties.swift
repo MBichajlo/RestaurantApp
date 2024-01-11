@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Item {
+extension MenuItem {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Item> {
-        return NSFetchRequest<Item>(entityName: "MenuItem")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<MenuItem> {
+        return NSFetchRequest<MenuItem>(entityName: "MenuItem")
     }
 
     @NSManaged public var price: Double
@@ -26,7 +26,7 @@ extension Item {
 }
 
 // MARK: Generated accessors for ingredient
-extension Item {
+extension MenuItem {
 
     @objc(addIngredientObject:)
     @NSManaged public func addToIngredient(_ value: Ingredient)
@@ -42,6 +42,6 @@ extension Item {
 
 }
 
-extension Item : Identifiable {
+extension MenuItem : Identifiable {
 
 }

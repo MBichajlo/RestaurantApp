@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
-import CoreData
+
 
 struct ClientsView: View {
     
-    @EnvironmentObject var viewModel:startMenuModel
+    @EnvironmentObject var topViewModel:startMenuModel
     
+    @StateObject var viewModel = ClientsViewModel()
     
     let screensize = UIScreen.main.bounds.size.width
     let screensizeH = UIScreen.main.bounds.size.height
@@ -24,7 +25,11 @@ struct ClientsView: View {
                     
                     Button(action: {
                         withAnimation(.default, {
-                            viewModel.returnToMenu()
+                            viewModel.hideList()
+                        },completion:{
+                            withAnimation(.default, {
+                                topViewModel.returnToMenu()
+                            })
                         })
                         
                         
@@ -39,7 +44,7 @@ struct ClientsView: View {
                             
                             
                             
-                    }).opacity(viewModel.currentState == .clients ? 1:0)
+                    }).opacity(topViewModel.currentState == .clients ? 1:0)
                         //.animation(.default, value: viewModel.currentState)
                         
                     Spacer()
@@ -57,12 +62,17 @@ struct ClientsView: View {
                             .foregroundColor(.white)
                             .frame(width: 30,height: 30)
                             .padding(.trailing)
-                    }.opacity(viewModel.currentState == .clients ? 1:0)
+                    }.opacity(topViewModel.currentState == .clients ? 1:0)
                        // .animation(.default, value: viewModel.currentState)
                     
                     
                     
                 
+                }
+                Spacer()
+                if viewModel.isListVisible{
+                    listView().transition(.offset(y:screensizeH))
+                        .frame(height: .infinity)
                 }
                 
                 
@@ -70,16 +80,20 @@ struct ClientsView: View {
                 
                 
                 
-                Spacer()
             }
         }
-        .frame(width:viewModel.currentState == .clients ? .infinity:screensize/2 )
+        .frame(width:topViewModel.currentState == .clients ? .infinity:screensize/2 )
         
         .onTapGesture {
             withAnimation(.default, {
-                viewModel.switchStates(self)
-            })
-            viewModel.switchStates(self)
+                topViewModel.switchStates(self)
+            },completion:{
+                withAnimation(.default, {
+                    viewModel.showList()
+                })
+            }
+            )
+            
         }
         
     }

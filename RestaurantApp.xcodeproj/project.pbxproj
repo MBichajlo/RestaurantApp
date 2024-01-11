@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9880486F2B4F5A19007915E2 /* clientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9880486E2B4F5A19007915E2 /* clientsViewModel.swift */; };
+		988048712B4F693F007915E2 /* listView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988048702B4F693F007915E2 /* listView.swift */; };
+		988048732B4F6EB4007915E2 /* employeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988048722B4F6EB4007915E2 /* employeesViewModel.swift */; };
 		98B40C4A2B4D7C00009D55AE /* RestaurantAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C492B4D7C00009D55AE /* RestaurantAppApp.swift */; };
 		98B40C4E2B4D7C02009D55AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B40C4D2B4D7C02009D55AE /* Assets.xcassets */; };
 		98B40C512B4D7C02009D55AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B40C502B4D7C02009D55AE /* Preview Assets.xcassets */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9880486E2B4F5A19007915E2 /* clientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientsViewModel.swift; sourceTree = "<group>"; };
+		988048702B4F693F007915E2 /* listView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listView.swift; sourceTree = "<group>"; };
+		988048722B4F6EB4007915E2 /* employeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeesViewModel.swift; sourceTree = "<group>"; };
 		98B40C462B4D7C00009D55AE /* RestaurantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B40C492B4D7C00009D55AE /* RestaurantAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAppApp.swift; sourceTree = "<group>"; };
 		98B40C4D2B4D7C02009D55AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,9 +101,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9880486D2B4F5A04007915E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98B40C972B4E268D009D55AE /* startMenuViewModel.swift */,
+				9880486E2B4F5A19007915E2 /* clientsViewModel.swift */,
+				988048722B4F6EB4007915E2 /* employeesViewModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		98B40C3D2B4D7C00009D55AE = {
 			isa = PBXGroup;
 			children = (
+				9880486D2B4F5A04007915E2 /* Models */,
 				98B40C902B4D8613009D55AE /* CoreData */,
 				98B40C482B4D7C00009D55AE /* RestaurantApp */,
 				98B40C5E2B4D7C02009D55AE /* RestaurantAppTests */,
@@ -119,6 +136,7 @@
 		98B40C482B4D7C00009D55AE /* RestaurantApp */ = {
 			isa = PBXGroup;
 			children = (
+				988048702B4F693F007915E2 /* listView.swift */,
 				98B40C952B4E22C9009D55AE /* EmployeesView.swift */,
 				98B40C932B4E22B8009D55AE /* ClientsView.swift */,
 				98B40C9B2B4F2618009D55AE /* textExtensions.swift */,
@@ -126,9 +144,7 @@
 				98B40C492B4D7C00009D55AE /* RestaurantAppApp.swift */,
 				98B40C4D2B4D7C02009D55AE /* Assets.xcassets */,
 				98B40C522B4D7C02009D55AE /* Persistence.swift */,
-				98B40C542B4D7C02009D55AE /* RestaurantApp.xcdatamodeld */,
 				98B40C4F2B4D7C02009D55AE /* Preview Content */,
-				98B40C972B4E268D009D55AE /* startMenuViewModel.swift */,
 			);
 			path = RestaurantApp;
 			sourceTree = "<group>";
@@ -167,6 +183,7 @@
 				98B40C872B4D85FD009D55AE /* Item+CoreDataProperties.swift */,
 				98B40C882B4D85FD009D55AE /* Category+CoreDataClass.swift */,
 				98B40C892B4D85FD009D55AE /* Category+CoreDataProperties.swift */,
+				98B40C542B4D7C02009D55AE /* RestaurantApp.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -301,6 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				988048732B4F6EB4007915E2 /* employeesViewModel.swift in Sources */,
+				988048712B4F693F007915E2 /* listView.swift in Sources */,
+				9880486F2B4F5A19007915E2 /* clientsViewModel.swift in Sources */,
 				98B40C8B2B4D85FD009D55AE /* Ingredient+CoreDataProperties.swift in Sources */,
 				98B40C922B4D8807009D55AE /* StartMenuView.swift in Sources */,
 				98B40C982B4E268D009D55AE /* startMenuViewModel.swift in Sources */,
