@@ -69,12 +69,14 @@ struct ClientsView: View {
                     
                 
                 }
-                Spacer()
-                if viewModel.isListVisible{
-                    listView().transition(.offset(y:screensizeH))
-                        .frame(height: .infinity)
-                }
                 
+                GeometryReader{geo in
+                    if viewModel.isListVisible{
+                        listView().transition(.offset(y:screensizeH))
+                            .frame(height: geo.size.height+20)
+                    }
+                }
+                Spacer()
                 
                 
                 
@@ -82,7 +84,7 @@ struct ClientsView: View {
                 
             }
         }
-        .frame(width:topViewModel.currentState == .clients ? .infinity:screensize/2 )
+        .frame(width:topViewModel.currentState == .clients ? screensize:screensize/2 )
         
         .onTapGesture {
             withAnimation(.default, {

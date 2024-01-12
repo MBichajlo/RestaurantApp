@@ -36,7 +36,7 @@ struct StartMenuView: View {
                     
             }.environmentObject(viewModel)
             if viewModel.currentState == .menu {
-                Text("Restaurant App")
+                //Text("Restaurant App")
             }
            
             

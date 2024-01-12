@@ -17,7 +17,7 @@ struct EmployeesView: View {
         ZStack{
             Color.customLightBlue
                 .ignoresSafeArea()
-            VStack(){
+            VStack{
                 HStack{//Navigation Bar
                     Button {
                         
@@ -60,22 +60,17 @@ struct EmployeesView: View {
                 
                 Spacer()
                 
-                if viewModel.state == .login && topViewModel.currentState == .employees {
-                    VStack {
-                        TextField("Username", text: $viewModel.username)
-                            .padding(10)
-                            .background(Color.white.opacity(0.3))
-                            .cornerRadius(13)
-                        SecureField("Password", text: $viewModel.password)
-                            .padding(10)
-                            .background(Color.white.opacity(0.3))
-                            .cornerRadius(13)
-                            
-                    }
-                    
-                    .frame(width: 300,alignment: .center)
-                    
-                    
+                switch viewModel.state {
+                case .login:
+                    loginScreen().environmentObject(viewModel)
+                case .logged:
+                    Text("Logged in!")
+                case .edit:
+                    EmptyView()
+                case .order:
+                    EmptyView()
+                case .none:
+                    EmptyView()
                 }
                 
                 Spacer()
@@ -88,7 +83,7 @@ struct EmployeesView: View {
                 topViewModel.switchStates(self)
             },completion: {
                 withAnimation(.default) {
-                    viewModel.state = .login
+                    viewModel.state = viewModel.didLogIn ? .logged:.login
                 }
             })
             

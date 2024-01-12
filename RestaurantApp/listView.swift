@@ -12,6 +12,7 @@ import SwiftUI
 struct listView: View {
     @EnvironmentObject var viewModel:ClientsViewModel
     
+    let screensizeH = UIScreen.main.bounds.size.height
     var body: some View {
         ZStack{
             //Color.customBeige

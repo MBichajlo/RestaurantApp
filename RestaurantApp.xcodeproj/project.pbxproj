@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		982D74902B50C18C0050E163 /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D748F2B50C18C0050E163 /* loginScreen.swift */; };
 		9880486F2B4F5A19007915E2 /* clientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9880486E2B4F5A19007915E2 /* clientsViewModel.swift */; };
 		988048712B4F693F007915E2 /* listView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988048702B4F693F007915E2 /* listView.swift */; };
 		988048732B4F6EB4007915E2 /* employeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988048722B4F6EB4007915E2 /* employeesViewModel.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		982D748F2B50C18C0050E163 /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 		9880486E2B4F5A19007915E2 /* clientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientsViewModel.swift; sourceTree = "<group>"; };
 		988048702B4F693F007915E2 /* listView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listView.swift; sourceTree = "<group>"; };
 		988048722B4F6EB4007915E2 /* employeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeesViewModel.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				988048702B4F693F007915E2 /* listView.swift */,
+				982D748F2B50C18C0050E163 /* loginScreen.swift */,
 				98B40C952B4E22C9009D55AE /* EmployeesView.swift */,
 				98B40C932B4E22B8009D55AE /* ClientsView.swift */,
 				98B40C9B2B4F2618009D55AE /* textExtensions.swift */,
@@ -327,6 +330,7 @@
 				98B40C562B4D7C02009D55AE /* RestaurantApp.xcdatamodeld in Sources */,
 				98B40C9C2B4F2618009D55AE /* textExtensions.swift in Sources */,
 				98B40C942B4E22B8009D55AE /* ClientsView.swift in Sources */,
+				982D74902B50C18C0050E163 /* loginScreen.swift in Sources */,
 				98B40C8D2B4D85FD009D55AE /* Item+CoreDataProperties.swift in Sources */,
 				98B40C532B4D7C02009D55AE /* Persistence.swift in Sources */,
 				98B40C8A2B4D85FD009D55AE /* Ingredient+CoreDataClass.swift in Sources */,
