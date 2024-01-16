@@ -30,6 +30,7 @@
 		98B40C962B4E22C9009D55AE /* EmployeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C952B4E22C9009D55AE /* EmployeesView.swift */; };
 		98B40C982B4E268D009D55AE /* startMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C972B4E268D009D55AE /* startMenuViewModel.swift */; };
 		98B40C9C2B4F2618009D55AE /* textExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C9B2B4F2618009D55AE /* textExtensions.swift */; };
+		98BEF2D02B55FCF4001E096D /* employeesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BEF2CF2B55FCF4001E096D /* employeesTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		98B40C952B4E22C9009D55AE /* EmployeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesView.swift; sourceTree = "<group>"; };
 		98B40C972B4E268D009D55AE /* startMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startMenuViewModel.swift; sourceTree = "<group>"; };
 		98B40C9B2B4F2618009D55AE /* textExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textExtensions.swift; sourceTree = "<group>"; };
+		98BEF2CF2B55FCF4001E096D /* employeesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeesTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				988048702B4F693F007915E2 /* listView.swift */,
 				982D748F2B50C18C0050E163 /* loginScreen.swift */,
 				98B40C952B4E22C9009D55AE /* EmployeesView.swift */,
+				98BEF2CF2B55FCF4001E096D /* employeesTabView.swift */,
 				98B40C932B4E22B8009D55AE /* ClientsView.swift */,
 				98B40C9B2B4F2618009D55AE /* textExtensions.swift */,
 				98B40C912B4D8807009D55AE /* StartMenuView.swift */,
@@ -328,6 +331,7 @@
 				98B40C922B4D8807009D55AE /* StartMenuView.swift in Sources */,
 				98B40C982B4E268D009D55AE /* startMenuViewModel.swift in Sources */,
 				98B40C562B4D7C02009D55AE /* RestaurantApp.xcdatamodeld in Sources */,
+				98BEF2D02B55FCF4001E096D /* employeesTabView.swift in Sources */,
 				98B40C9C2B4F2618009D55AE /* textExtensions.swift in Sources */,
 				98B40C942B4E22B8009D55AE /* ClientsView.swift in Sources */,
 				982D74902B50C18C0050E163 /* loginScreen.swift in Sources */,

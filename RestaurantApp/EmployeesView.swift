@@ -17,6 +17,16 @@ struct EmployeesView: View {
         ZStack{
             Color.customLightBlue
                 .ignoresSafeArea()
+                .onTapGesture {
+                    withAnimation(.smooth, {
+                        topViewModel.switchStates(self)
+                    },completion: {
+                        withAnimation(.smooth) {
+                            viewModel.state = viewModel.didLogIn ? .logged:.login
+                        }
+                    })
+                    
+                }
             VStack{
                 HStack{//Navigation Bar
                     Button {
@@ -63,8 +73,9 @@ struct EmployeesView: View {
                 switch viewModel.state {
                 case .login:
                     loginScreen().environmentObject(viewModel)
+                    Spacer()
                 case .logged:
-                    Text("Logged in!")
+                    employeesTabView()
                 case .edit:
                     EmptyView()
                 case .order:
@@ -73,21 +84,12 @@ struct EmployeesView: View {
                     EmptyView()
                 }
                 
-                Spacer()
+                
                 
             }
         }
         .frame(width: topViewModel.currentState == .employees ? screensize: screensize/2)
-        .onTapGesture {
-            withAnimation(.smooth, {
-                topViewModel.switchStates(self)
-            },completion: {
-                withAnimation(.default) {
-                    viewModel.state = viewModel.didLogIn ? .logged:.login
-                }
-            })
-            
-        }
+        
         
         
     }
