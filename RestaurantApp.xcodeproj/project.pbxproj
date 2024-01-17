@@ -31,6 +31,7 @@
 		98B40C982B4E268D009D55AE /* startMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C972B4E268D009D55AE /* startMenuViewModel.swift */; };
 		98B40C9C2B4F2618009D55AE /* textExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B40C9B2B4F2618009D55AE /* textExtensions.swift */; };
 		98BEF2D02B55FCF4001E096D /* employeesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BEF2CF2B55FCF4001E096D /* employeesTabView.swift */; };
+		98BEF2D22B585EF4001E096D /* listCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BEF2D12B585EF4001E096D /* listCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		98B40C972B4E268D009D55AE /* startMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startMenuViewModel.swift; sourceTree = "<group>"; };
 		98B40C9B2B4F2618009D55AE /* textExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textExtensions.swift; sourceTree = "<group>"; };
 		98BEF2CF2B55FCF4001E096D /* employeesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeesTabView.swift; sourceTree = "<group>"; };
+		98BEF2D12B585EF4001E096D /* listCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				988048702B4F693F007915E2 /* listView.swift */,
 				982D748F2B50C18C0050E163 /* loginScreen.swift */,
 				98B40C952B4E22C9009D55AE /* EmployeesView.swift */,
+				98BEF2D12B585EF4001E096D /* listCell.swift */,
 				98BEF2CF2B55FCF4001E096D /* employeesTabView.swift */,
 				98B40C932B4E22B8009D55AE /* ClientsView.swift */,
 				98B40C9B2B4F2618009D55AE /* textExtensions.swift */,
@@ -337,6 +340,7 @@
 				982D74902B50C18C0050E163 /* loginScreen.swift in Sources */,
 				98B40C8D2B4D85FD009D55AE /* Item+CoreDataProperties.swift in Sources */,
 				98B40C532B4D7C02009D55AE /* Persistence.swift in Sources */,
+				98BEF2D22B585EF4001E096D /* listCell.swift in Sources */,
 				98B40C8A2B4D85FD009D55AE /* Ingredient+CoreDataClass.swift in Sources */,
 				98B40C4A2B4D7C00009D55AE /* RestaurantAppApp.swift in Sources */,
 				98B40C962B4E22C9009D55AE /* EmployeesView.swift in Sources */,

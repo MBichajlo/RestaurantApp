@@ -72,7 +72,7 @@ struct ClientsView: View {
                 
                 GeometryReader{geo in
                     if viewModel.isListVisible{
-                        listView().transition(.offset(y:screensizeH))
+                        listView(sender: self).transition(.offset(y:screensizeH))
                             .frame(height: geo.size.height+20)
                     }
                 }

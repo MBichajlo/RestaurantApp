@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-enum tab {
-    case menu
-    case ingredients
-}
+
 
 struct employeesTabView: View {
+   
     
-    @State var tab:tab = .menu
+    
+    
     
     var body: some View {
         ZStack{
             
             TabView{
                 Group{
-                    listView()
+                    listView(sender:self)
+                        
                         
                         .tabItem {
                             Text("Menu")
@@ -31,15 +31,20 @@ struct employeesTabView: View {
                         
                         .tag(1)
                         
-                    listView()
+                    listView(sender:self)
                         .tabItem {
                             Text("Ingredients")
                             Image(systemName: "carrot")
                         }
+                        
                         .tag(2)
-                }.background(Color.customLightBlue)
-                    .toolbarBackground(Color.customDarkBlue, for: .tabBar)
                     
+                    
+                        
+                }
+                .toolbarBackground(Color.customDarkBlue, for:.tabBar)
+                .toolbar(.visible, for: .tabBar)
+                .background(Color.customLightBlue)
                     
             }
         }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct loginScreen: View {
     @EnvironmentObject var model:EmployeesViewModel
+    @EnvironmentObject var topViewModel:startMenuModel
     
     var body: some View {
         VStack{
@@ -27,7 +28,10 @@ struct loginScreen: View {
                 .autocorrectionDisabled(true)
             
             Button{
-                model.login()
+                if model.login(){
+                    topViewModel.login()
+                }
+                
             }label:{
                 Text("Log in")
                     .frame(maxWidth: .infinity)

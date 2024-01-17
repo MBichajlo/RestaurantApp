@@ -22,7 +22,7 @@ struct EmployeesView: View {
                         topViewModel.switchStates(self)
                     },completion: {
                         withAnimation(.smooth) {
-                            viewModel.state = viewModel.didLogIn ? .logged:.login
+                            viewModel.state = topViewModel.didLogin ? .logged:.login
                         }
                     })
                     

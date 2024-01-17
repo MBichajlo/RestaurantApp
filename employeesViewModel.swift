@@ -24,11 +24,13 @@ class EmployeesViewModel:ObservableObject{
     private let correctUsername = "admin"
     private let correctPassword = "admin"
     
-    func login() {
+    func login() -> Bool{
         if password==correctPassword && username == correctUsername{
             state = .logged
             didLogIn = true 
+            return true
         }
+        return false
     }
     
 }

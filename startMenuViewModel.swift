@@ -19,9 +19,11 @@ enum  viewStates{
    
     
     @Published var currentState:viewStates = .menu
+    @Published var didLogin:Bool = false
     
-    @Published var clientViewVis:Bool=false
-    @Published var employeesViewVis:Bool=false
+    func login(){
+        didLogin=true
+    }
     
     func returnToMenu(){
         currentState = .menu
