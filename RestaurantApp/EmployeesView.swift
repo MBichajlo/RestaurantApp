@@ -75,7 +75,28 @@ struct EmployeesView: View {
                     loginScreen().environmentObject(viewModel)
                     Spacer()
                 case .logged:
-                    employeesTabView()
+                    TabView{
+                        Group{
+                            employeesMenuView()
+                                .tabItem {
+                                    Text("Menu")
+                                    Image(systemName: "menucard")
+                                }
+                                .tag(1)
+                                
+                            employeesIngredientsView()
+                                .tabItem {
+                                    Text("Ingredients")
+                                        
+                                    Image(systemName: "carrot")
+                                }
+                                .tag(2)
+                        }
+                        .toolbarBackground(Color.customDarkBlue, for: .tabBar)
+                        //.toolbarColorScheme(ColorScheme.light, for: .tabBar)
+                        .background(Color.customLightBlue)
+                            
+                    }
                 case .edit:
                     EmptyView()
                 case .order:
