@@ -12,9 +12,7 @@ struct ingredientsCell: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .strokeBorder(Color.customDarkBlue,lineWidth: 5)
-                .background(RoundedRectangle(cornerRadius: 15).fill(Color.customLightBlue))
+            
                 
                 
                 
@@ -25,7 +23,7 @@ struct ingredientsCell: View {
                 Spacer()
                 
                 Button{
-                        
+                    print("a")
                 }label: {
                     Image(systemName: "cart.badge.plus")
                         .resizable()
@@ -34,15 +32,17 @@ struct ingredientsCell: View {
                         .foregroundStyle(Color.white)
                         .padding(20)
                 }
+                .buttonStyle(.plain)
                 
                 
                 
             }
             .frame(height: 25)
             
-        }.frame(width: screensizeW*0.9,height: 60)
-            
+        }
+        .frame(width: screensizeW*0.9,height: 60)
         
+        .listRowSpacing(5)
         
         
     }

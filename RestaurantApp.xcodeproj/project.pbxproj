@@ -11,6 +11,8 @@
 		981E3D512B5A0EBC00DFB09E /* employeesMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D502B5A0EBC00DFB09E /* employeesMenuView.swift */; };
 		981E3D532B5A109400DFB09E /* ingredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D522B5A109400DFB09E /* ingredientsCell.swift */; };
 		981E3D552B5A109C00DFB09E /* menuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D542B5A109C00DFB09E /* menuCell.swift */; };
+		981E3D572B5B5D0A00DFB09E /* tileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D562B5B5D0A00DFB09E /* tileView.swift */; };
+		981E3D592B5B5E1200DFB09E /* universalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D582B5B5E1200DFB09E /* universalListView.swift */; };
 		982D74902B50C18C0050E163 /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D748F2B50C18C0050E163 /* loginScreen.swift */; };
 		9880486F2B4F5A19007915E2 /* clientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9880486E2B4F5A19007915E2 /* clientsViewModel.swift */; };
 		988048732B4F6EB4007915E2 /* employeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988048722B4F6EB4007915E2 /* employeesViewModel.swift */; };
@@ -57,6 +59,8 @@
 		981E3D502B5A0EBC00DFB09E /* employeesMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeesMenuView.swift; sourceTree = "<group>"; };
 		981E3D522B5A109400DFB09E /* ingredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingredientsCell.swift; sourceTree = "<group>"; };
 		981E3D542B5A109C00DFB09E /* menuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuCell.swift; sourceTree = "<group>"; };
+		981E3D562B5B5D0A00DFB09E /* tileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tileView.swift; sourceTree = "<group>"; };
+		981E3D582B5B5E1200DFB09E /* universalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = universalListView.swift; sourceTree = "<group>"; };
 		982D748F2B50C18C0050E163 /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 		9880486E2B4F5A19007915E2 /* clientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientsViewModel.swift; sourceTree = "<group>"; };
 		988048722B4F6EB4007915E2 /* employeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeesViewModel.swift; sourceTree = "<group>"; };
@@ -146,10 +150,12 @@
 			children = (
 				982D748F2B50C18C0050E163 /* loginScreen.swift */,
 				981E3D522B5A109400DFB09E /* ingredientsCell.swift */,
+				981E3D562B5B5D0A00DFB09E /* tileView.swift */,
 				98B40C952B4E22C9009D55AE /* EmployeesView.swift */,
 				981E3D542B5A109C00DFB09E /* menuCell.swift */,
 				981E3D502B5A0EBC00DFB09E /* employeesMenuView.swift */,
 				981E3D4E2B5A0EAC00DFB09E /* employeesIngredientsView.swift */,
+				981E3D582B5B5E1200DFB09E /* universalListView.swift */,
 				98B40C932B4E22B8009D55AE /* ClientsView.swift */,
 				98B40C9B2B4F2618009D55AE /* textExtensions.swift */,
 				98B40C912B4D8807009D55AE /* StartMenuView.swift */,
@@ -332,6 +338,7 @@
 			files = (
 				988048732B4F6EB4007915E2 /* employeesViewModel.swift in Sources */,
 				981E3D512B5A0EBC00DFB09E /* employeesMenuView.swift in Sources */,
+				981E3D572B5B5D0A00DFB09E /* tileView.swift in Sources */,
 				9880486F2B4F5A19007915E2 /* clientsViewModel.swift in Sources */,
 				98B40C8B2B4D85FD009D55AE /* Ingredient+CoreDataProperties.swift in Sources */,
 				98B40C922B4D8807009D55AE /* StartMenuView.swift in Sources */,
@@ -339,6 +346,7 @@
 				98B40C562B4D7C02009D55AE /* RestaurantApp.xcdatamodeld in Sources */,
 				981E3D532B5A109400DFB09E /* ingredientsCell.swift in Sources */,
 				98B40C9C2B4F2618009D55AE /* textExtensions.swift in Sources */,
+				981E3D592B5B5E1200DFB09E /* universalListView.swift in Sources */,
 				98B40C942B4E22B8009D55AE /* ClientsView.swift in Sources */,
 				982D74902B50C18C0050E163 /* loginScreen.swift in Sources */,
 				98B40C8D2B4D85FD009D55AE /* Item+CoreDataProperties.swift in Sources */,

@@ -21,6 +21,9 @@ class EmployeesViewModel:ObservableObject{
     @Published  var state:employeesViewState = .none    
     @Published  var didLogIn = false
     
+    @Published  var searchQuery = ""
+    @Published var searching = false
+    
     private let correctUsername = "admin"
     private let correctPassword = "admin"
     

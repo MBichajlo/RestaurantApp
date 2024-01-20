@@ -12,11 +12,11 @@ struct employeesIngredientsView: View {
     let screensizeW = UIScreen.main.bounds.size.width
     
     @EnvironmentObject var model:EmployeesViewModel
-    
+    @State var x=""
     var body: some View {
         ZStack{
             
-            ScrollView{
+            /*ScrollView{
                 VStack(spacing:3) {
                     ForEach(1..<50){_ in
                         ingredientsCell()
@@ -45,7 +45,44 @@ struct employeesIngredientsView: View {
                 .padding(.top,10)
             }
             
-            .scrollContentBackground(.hidden)
+            .scrollContentBackground(.hidden)*/
+            NavigationStack {
+                List{
+                    ForEach(1..<50){_ in
+                        ingredientsCell()
+                            .frame(height: 40)
+                            
+                            
+                    }.listRowBackground(
+                        RoundedRectangle(cornerRadius: 15)
+                            .strokeBorder(Color.customDarkBlue,lineWidth: 5)
+                            .background(RoundedRectangle(cornerRadius: 15).fill(Color.customLightBlue))
+                            .padding(2)
+                            
+                    )
+                    .listRowSeparator(.hidden)
+                    HStack{
+                        Spacer()
+                        Button{
+                            
+                        }label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .frame(width: 30,height: 30)
+                        }
+                        Spacer()
+                    }.listRowBackground(
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(Color.green)
+                    )
+                    
+                    
+                    
+                }
+                .searchable(text: $x)
+                
+                .scrollContentBackground(.hidden)
+            }
                 
                 
                 
