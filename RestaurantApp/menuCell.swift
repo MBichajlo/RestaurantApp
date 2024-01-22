@@ -10,13 +10,13 @@ import SwiftUI
 struct menuCell: View {
     let screensizeW = UIScreen.main.bounds.size.width
     
-    @State var dropDown = false
-    
+    let menuItem:MenuItem?
+    @EnvironmentObject var model:EmployeesViewModel
+    @State var dropDown:Bool = false
+    //let index:Int
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .strokeBorder(Color.customDarkBlue,lineWidth: 5)
-                .background(RoundedRectangle(cornerRadius: 15).fill(Color.customLightBlue))
+            
                 
                 
                 
@@ -27,8 +27,10 @@ struct menuCell: View {
                         .foregroundStyle(Color.white)
                     Spacer()
                     Button{
-                        withAnimation(.default, {
-                            dropDown.toggle()
+                        withAnimation(.linear(duration: 0.2), {
+                            model.detailsSheetVisible = true
+                            model.currentMenuItem = menuItem
+                            
                         })
                     }label: {
                         Image(systemName: "chevron.down")
@@ -51,13 +53,13 @@ struct menuCell: View {
             
         }
         .frame(width: screensizeW*0.9,height: dropDown ? 200 : 60)
-            
-        
+        //.background(Color.red)
+        .animation(.default, value: dropDown)
         
         
     }
 }
 
 #Preview {
-    menuCell()
+    menuCell(menuItem: .none)
 }

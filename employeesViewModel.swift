@@ -13,26 +13,30 @@ enum employeesViewState{
     case none
 }
 
+protocol menuListProtocol:ObservableObject  {
+    
+}
+
+
+
 import SwiftUI
 import CoreData
 
-class EmployeesViewModel:ObservableObject{
+class EmployeesViewModel:menuListProtocol{
+    
+    private let context=PersistenceController.shared.container.viewContext
+    
+    // MARK: - Login Variables
     @Published  var username=""
     @Published  var password=""
     @Published  var state:employeesViewState = .none    
     @Published  var didLogIn = false
-    
-    @Published  var searchQuery = ""
-    @Published var searching = false
-    
-    
-    
     private let correctUsername = "admin"
     private let correctPassword = "admin"
-    
-    private let context=PersistenceController.shared.container.viewContext
-    
-    @Published var newIngredientAlertShowing = false 
+
+   
+    //MARK: - Ingredients Variables
+    @Published var newIngredientAlertShowing = false
     @Published var ingredientAlreadyExists = false
     @Published var orderAlert = false
     @Published var newIngredientName = ""
@@ -40,7 +44,15 @@ class EmployeesViewModel:ObservableObject{
     @Published var filteredIngredients:[Ingredient]=[]
     @Published var orderSize:Int32 = 0
     @Published var currentIngredient:Ingredient?
+    @Published  var searchQuery = ""
+    @Published var searching = false
     
+    //MARK: - Menu Items Variables
+    @Published var detailsSheetVisible = false
+    @Published var currentMenuItem:MenuItem?
+    
+    
+    //MARK: - Login Functions
     func login() -> Bool{
         if password==correctPassword && username == correctUsername{
             state = .logged
@@ -50,11 +62,13 @@ class EmployeesViewModel:ObservableObject{
         return false
     }
     
+    //MARK: - Menu Items Functions
     
     
     
     
     
+    //MARK: - Igredients Functions
     func fetchIngredients(){
         let request = NSFetchRequest<Ingredient>(entityName: "Ingredient")
         do{
@@ -101,6 +115,14 @@ class EmployeesViewModel:ObservableObject{
         fetchIngredients()
     }
     
+    func orderIngredients(){
+        if orderSize>0{
+            currentIngredient?.stock += orderSize
+        }
+        orderSize = 0
+        currentIngredient=nil
+    }
+    
     
     func save(){
         do{
@@ -110,13 +132,7 @@ class EmployeesViewModel:ObservableObject{
         }
     }
     
-    func orderIngredients(){
-        if orderSize>0{
-            currentIngredient?.stock += orderSize
-        }
-        orderSize = 0
-        currentIngredient=nil
-    }
+    
     
     
 }
