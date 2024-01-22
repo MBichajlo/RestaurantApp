@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ingredientsCell: View {
+    
+    @EnvironmentObject var model:EmployeesViewModel
     let screensizeW = UIScreen.main.bounds.size.width
     
+    let ingredient:Ingredient
+    
+
     var body: some View {
         ZStack {
             
@@ -17,13 +22,24 @@ struct ingredientsCell: View {
                 
                 
             HStack{
-                Text("Dummy text")
-                    .padding(20)
-                    .foregroundStyle(Color.white)
+                VStack(alignment:.leading) {
+                    Text(ingredient.name ?? "Error")
+                        .font(.system(size: 30))
+                        .foregroundStyle(Color.white)
+                        .padding(.leading,10)
+                    
+                    Text("Current stock: \(ingredient.stock)")
+                        .foregroundStyle(Color.white)
+                        .font(.system(size:15))
+                        .frame(alignment: .trailing)
+                        .padding(.leading, 40)
+                }
                 Spacer()
                 
                 Button{
-                    print("a")
+                    model.currentIngredient = ingredient
+                    model.orderAlert = true
+                    
                 }label: {
                     Image(systemName: "cart.badge.plus")
                         .resizable()
@@ -41,7 +57,7 @@ struct ingredientsCell: View {
             
         }
         .frame(width: screensizeW*0.9,height: 60)
-        
+       // .background(Color.red)
         .listRowSpacing(5)
         
         
@@ -49,5 +65,6 @@ struct ingredientsCell: View {
 }
 
 #Preview {
-    ingredientsCell()
+    ingredientsCell(ingredient: Ingredient(context: PersistenceController.shared.container.viewContext))
+        .environmentObject(EmployeesViewModel())
 }

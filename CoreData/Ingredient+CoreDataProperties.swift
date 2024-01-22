@@ -19,6 +19,7 @@ extension Ingredient {
     @NSManaged public var name: String?
     @NSManaged public var id: UUID?
     @NSManaged public var menu_item: NSSet?
+    @NSManaged public var stock: Int32
 
 }
 

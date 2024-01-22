@@ -25,7 +25,7 @@ struct universalListView: View {
             ForEach(1..<50){_ in
                 switch use {
                 case .ingredients:
-                    ingredientsCell()
+                    ingredientsCell(ingredient: Ingredient())
                         .frame(height: 40)
                 case .menuClients:
                     menuCell()

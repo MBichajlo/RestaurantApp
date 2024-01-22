@@ -12,91 +12,91 @@ struct employeesIngredientsView: View {
     let screensizeW = UIScreen.main.bounds.size.width
     
     @EnvironmentObject var model:EmployeesViewModel
-    @State var x=""
+   
     var body: some View {
-        ZStack{
-            
-            /*ScrollView{
-                VStack(spacing:3) {
-                    ForEach(1..<50){_ in
-                        ingredientsCell()
-                        
-                    }
-                    Button{
-                        
-                    }label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(Color.green)
-                            HStack{
-                                Image(systemName: "plus")
-                                    .resizable()
-                                    .symbolRenderingMode(.monochrome)
-                                    .foregroundStyle(Color.white)
-                                    .frame(width: 30,height: 30)
-                                    
+        
+          
+        NavigationStack {
+            ZStack {
+                Color.customLightBlue.ignoresSafeArea()
+                VStack {
+                    List{
+                        ForEach(model.filteredIngredients,id: \.id){ingredient in
+                            ingredientsCell(ingredient: ingredient)
+                                //.frame(height: 50)
                                 
-                            }
+                        }
+                        .onDelete(perform:model.deleteIngredient)
+                        .listRowBackground(
+                            RoundedRectangle(cornerRadius: 10)
+                                .strokeBorder(Color.customDarkBlue,lineWidth: 3)
+                                .background(RoundedRectangle(cornerRadius: 15).fill(Color.customLightBlue))
+                                .padding(3)
                             
-                        }.frame(width: screensizeW*0.9,height: 60)
-                }
-                }
-                .frame(width: screensizeW)
-                .padding(.top,10)
-            }
-            
-            .scrollContentBackground(.hidden)*/
-            NavigationStack {
-                List{
-                    ForEach(1..<50){_ in
-                        ingredientsCell()
-                            .frame(height: 40)
-                            
-                            
-                    }.listRowBackground(
-                        RoundedRectangle(cornerRadius: 15)
-                            .strokeBorder(Color.customDarkBlue,lineWidth: 5)
-                            .background(RoundedRectangle(cornerRadius: 15).fill(Color.customLightBlue))
-                            .padding(2)
-                            
-                    )
-                    .listRowSeparator(.hidden)
+                        )
+                        
+                        .listRowSeparator(.hidden)
+                        
+                   
+                    }.scrollContentBackground(.hidden)
+                    
                     HStack{
                         Spacer()
                         Button{
-                            
+                            model.newIngredientAlertShowing.toggle()
                         }label: {
-                            Image(systemName: "plus")
-                                .resizable()
-                                .frame(width: 30,height: 30)
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.green)
+                                    .padding(.top,5)
+                                    .frame(width: screensizeW*0.9, height: 60)
+                                Image(systemName: "plus")
+                                    .resizable()
+                                    .frame(width: 30,height: 30)
+                            }
+                            
                         }
                         Spacer()
-                    }.listRowBackground(
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.green)
-                    )
+                    }
+                    .padding(.bottom,30)
+                    
                     
                     
                     
                 }
-                .searchable(text: $x)
-                
-                .scrollContentBackground(.hidden)
             }
-                
-                
-                
-             
-            
-            
-            //Color.customBeige
-            /*List{
-                
-                
-                
-                
-            }.scrollContentBackground(.hidden)*/
         }
+        .searchable(text: $model.searchQuery)
+        .textInputAutocapitalization(.never)
+        .onAppear(){
+            let coloredNavAppearence = UINavigationBarAppearance()
+            coloredNavAppearence.configureWithDefaultBackground()
+            coloredNavAppearence.backgroundColor = UIColor(Color.customLightBlue)
+            UINavigationBar.appearance().standardAppearance=coloredNavAppearence
+            
+            model.fetchIngredients()
+        }
+        .alert("Add ingredient", isPresented: $model.newIngredientAlertShowing){
+            TextField("Ingredient name", text: $model.newIngredientName)
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
+            Button("Cancel", role: .cancel, action: {})
+            Button("OK",action: model.newIngredientSave)
+        }
+        .alert("Ingredient already exists", isPresented: $model.ingredientAlreadyExists){
+            
+        }
+        .onChange(of: model.searchQuery){
+            model.filter()
+        }
+        .alert("Order ingredients", isPresented: $model.orderAlert){
+            TextField("Amount: ", value: $model.orderSize,format: .number)
+                
+            Button("OK",action: model.orderIngredients)
+            Button("Cancel", role: .cancel, action: {})
+        }
+        
+        
     }
 }
 

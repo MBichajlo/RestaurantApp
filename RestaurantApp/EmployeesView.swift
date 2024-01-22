@@ -85,7 +85,7 @@ struct EmployeesView: View {
                                     }
                                     .tag(1)
                                     
-                                employeesIngredientsView()
+                                employeesIngredientsView().environmentObject(viewModel)
                                     .tabItem {
                                         Text("Ingredients")
                                             

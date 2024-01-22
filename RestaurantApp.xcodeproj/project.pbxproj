@@ -13,6 +13,9 @@
 		981E3D552B5A109C00DFB09E /* menuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D542B5A109C00DFB09E /* menuCell.swift */; };
 		981E3D572B5B5D0A00DFB09E /* tileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D562B5B5D0A00DFB09E /* tileView.swift */; };
 		981E3D592B5B5E1200DFB09E /* universalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D582B5B5E1200DFB09E /* universalListView.swift */; };
+		981E3D5E2B5C396600DFB09E /* menuItemsDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D5D2B5C396600DFB09E /* menuItemsDummyData.swift */; };
+		981E3D602B5C3BD000DFB09E /* ingredientsDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D5F2B5C3BD000DFB09E /* ingredientsDummyData.swift */; };
+		981E3D622B5C3BDD00DFB09E /* categoryDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E3D612B5C3BDD00DFB09E /* categoryDummyData.swift */; };
 		982D74902B50C18C0050E163 /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D748F2B50C18C0050E163 /* loginScreen.swift */; };
 		9880486F2B4F5A19007915E2 /* clientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9880486E2B4F5A19007915E2 /* clientsViewModel.swift */; };
 		988048732B4F6EB4007915E2 /* employeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988048722B4F6EB4007915E2 /* employeesViewModel.swift */; };
@@ -61,6 +64,9 @@
 		981E3D542B5A109C00DFB09E /* menuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuCell.swift; sourceTree = "<group>"; };
 		981E3D562B5B5D0A00DFB09E /* tileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tileView.swift; sourceTree = "<group>"; };
 		981E3D582B5B5E1200DFB09E /* universalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = universalListView.swift; sourceTree = "<group>"; };
+		981E3D5D2B5C396600DFB09E /* menuItemsDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuItemsDummyData.swift; sourceTree = "<group>"; };
+		981E3D5F2B5C3BD000DFB09E /* ingredientsDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingredientsDummyData.swift; sourceTree = "<group>"; };
+		981E3D612B5C3BDD00DFB09E /* categoryDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryDummyData.swift; sourceTree = "<group>"; };
 		982D748F2B50C18C0050E163 /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 		9880486E2B4F5A19007915E2 /* clientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientsViewModel.swift; sourceTree = "<group>"; };
 		988048722B4F6EB4007915E2 /* employeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employeesViewModel.swift; sourceTree = "<group>"; };
@@ -113,6 +119,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		981E3D5C2B5C395200DFB09E /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				981E3D5D2B5C396600DFB09E /* menuItemsDummyData.swift */,
+				981E3D5F2B5C3BD000DFB09E /* ingredientsDummyData.swift */,
+				981E3D612B5C3BDD00DFB09E /* categoryDummyData.swift */,
+			);
+			name = DummyData;
+			sourceTree = "<group>";
+		};
 		9880486D2B4F5A04007915E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +142,7 @@
 		98B40C3D2B4D7C00009D55AE = {
 			isa = PBXGroup;
 			children = (
+				981E3D5C2B5C395200DFB09E /* DummyData */,
 				9880486D2B4F5A04007915E2 /* Models */,
 				98B40C902B4D8613009D55AE /* CoreData */,
 				98B40C482B4D7C00009D55AE /* RestaurantApp */,
@@ -347,11 +364,14 @@
 				981E3D532B5A109400DFB09E /* ingredientsCell.swift in Sources */,
 				98B40C9C2B4F2618009D55AE /* textExtensions.swift in Sources */,
 				981E3D592B5B5E1200DFB09E /* universalListView.swift in Sources */,
+				981E3D602B5C3BD000DFB09E /* ingredientsDummyData.swift in Sources */,
 				98B40C942B4E22B8009D55AE /* ClientsView.swift in Sources */,
 				982D74902B50C18C0050E163 /* loginScreen.swift in Sources */,
 				98B40C8D2B4D85FD009D55AE /* Item+CoreDataProperties.swift in Sources */,
 				981E3D4F2B5A0EAC00DFB09E /* employeesIngredientsView.swift in Sources */,
+				981E3D622B5C3BDD00DFB09E /* categoryDummyData.swift in Sources */,
 				98B40C532B4D7C02009D55AE /* Persistence.swift in Sources */,
+				981E3D5E2B5C396600DFB09E /* menuItemsDummyData.swift in Sources */,
 				98B40C8A2B4D85FD009D55AE /* Ingredient+CoreDataClass.swift in Sources */,
 				98B40C4A2B4D7C00009D55AE /* RestaurantAppApp.swift in Sources */,
 				98B40C962B4E22C9009D55AE /* EmployeesView.swift in Sources */,
