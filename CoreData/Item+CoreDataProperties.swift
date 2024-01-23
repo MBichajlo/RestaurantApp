@@ -8,15 +8,18 @@
 
 import Foundation
 import CoreData
-
-@objc public enum Category : Int32{
+@objc public enum menuItemCategory:Int32,CaseIterable,Identifiable{
+    public var id: Self{self}
+    
     case mainCourse = 0
     case drinks = 1
     case appetizers = 2
     case soups  = 3
 }
 
+
 extension MenuItem {
+    
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<MenuItem> {
         return NSFetchRequest<MenuItem>(entityName: "MenuItem")
@@ -27,7 +30,7 @@ extension MenuItem {
     @NSManaged public var name: String?
     @NSManaged public var orders: Int32
     @NSManaged public var ingredient: NSSet?
-    @NSManaged public var category: Category
+    @NSManaged public var category: menuItemCategory
     
 
 }

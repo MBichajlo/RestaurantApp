@@ -55,7 +55,10 @@ class EmployeesViewModel:menuListProtocol{
     @Published var newMenuItemName = ""
     @Published var newMenuItemPrice:Double = 0
     @Published var newMenuItemIngredients:[Ingredient]=[]
+    @Published var newMenuCategoru:menuItemCategory = .appetizers
     @Published var newMenuItemSheet = false
+    @Published var currentCategory:menuItemCategory = .mainCourse
+    @Published var menuItems:[MenuItem]=[]
     
     
     //MARK: - Login Functions
@@ -80,6 +83,30 @@ class EmployeesViewModel:menuListProtocol{
             newMenuItemIngredients.removeAll(where: {$0 == ingredient})
         }else{
             newMenuItemIngredients.append(ingredient)
+        }
+    }
+    
+    func saveMenuItem(){
+        let newMenuItem = MenuItem(context: context)
+        newMenuItem.name = newMenuItemName
+        newMenuItem.price = newMenuItemPrice
+        newMenuItem.category = newMenuCategoru
+        for i in newMenuItemIngredients{
+            newMenuItem.addToIngredient(i)
+        }
+        newMenuItem.id=UUID()
+        newMenuItem.orders=0
+        save()
+        
+    }
+    
+    func fetchMenuItems(){
+        let request = NSFetchRequest<MenuItem>(entityName: "MenuItem")
+        request.predicate = NSPredicate(format: "category = %i", currentCategory.rawValue)
+        do{
+            try menuItems = context.fetch(request)
+        }catch{
+            print("fetch error")
         }
     }
     

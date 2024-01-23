@@ -68,6 +68,7 @@ struct menuList: View {
         }.sheet(isPresented: $model.detailsSheetVisible, content: {
             ZStack{
                 Color.customLightBlue
+                    .ignoresSafeArea()
                 VStack{
                     Text(model.currentMenuItem?.name ?? "Error")
                         .modifier(menuItemName())
@@ -92,6 +93,7 @@ struct menuList: View {
         .sheet(isPresented: $model.newMenuItemSheet, content: {
             ZStack{
                 Color.customLightBlue
+                    .ignoresSafeArea()
                 VStack{
                     TextField("New Name", text: $model.newMenuItemName)
                         .frame(width: 250, alignment: .center)
@@ -100,6 +102,20 @@ struct menuList: View {
                     HStack{
                         TextField("Price", value: $model.newMenuItemPrice, format: .number)
                         Spacer()
+                        Picker("Category: ", selection: $model.newMenuCategoru){
+                            ForEach(menuItemCategory.allCases,id:\.self ){category in
+                                switch category{
+                                case .appetizers:
+                                    Text("Appetizers")
+                                case .mainCourse:
+                                    Text("Main Course")
+                                case .drinks:
+                                    Text("Drinks")
+                                case .soups:
+                                    Text("Soups")
+                                }
+                            }
+                        }
                         
                     }
                     .padding(.horizontal,20)
@@ -124,8 +140,19 @@ struct menuList: View {
                             .padding(3)
                         )
                     }
-                    
                     .scrollContentBackground(.hidden)
+                    
+                    Button{
+                        
+                    }label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(Color.green)
+                            Text("Add menu item")
+                        }
+                    }
+                    .frame(width: 150,height:60)
+                    
                     Spacer()
                 }.padding(.top,40)
             }
@@ -134,7 +161,7 @@ struct menuList: View {
             .presentationBackgroundInteraction(.enabled(upThrough: .medium))
         })
         .onAppear{
-            
+            model.fetchMenuItems()
             model.fetchIngredients()
         }
     }
