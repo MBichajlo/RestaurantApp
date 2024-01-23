@@ -22,9 +22,7 @@ struct menuCell: View {
                 
             VStack {
                 HStack{
-                    Text("Dummy")
-                        .padding(20)
-                        .foregroundStyle(Color.white)
+                    
                     Spacer()
                     Button{
                         withAnimation(.linear(duration: 0.2), {
@@ -33,14 +31,18 @@ struct menuCell: View {
                             
                         })
                     }label: {
-                        Image(systemName: "chevron.down")
+                        Text(menuItem?.name ?? "Dummy")
+                            .padding(20)
+                            .modifier(TitleText())
+                        /*Image(systemName: "chevron.down")
                             .resizable()
                             .frame(width:25, height: 10)
                             .symbolRenderingMode(.monochrome)
                             .foregroundStyle(Color.white)
                             .padding(20)
-                            .rotationEffect(dropDown ? .degrees(180): .degrees(0))
+                            .rotationEffect(dropDown ? .degrees(180): .degrees(0))*/
                 }
+                    Spacer()
                     
                     
                 }.padding(.top,dropDown ? 40:0)
@@ -62,4 +64,5 @@ struct menuCell: View {
 
 #Preview {
     menuCell(menuItem: .none)
+        .environmentObject(EmployeesViewModel())
 }

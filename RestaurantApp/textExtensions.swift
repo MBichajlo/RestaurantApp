@@ -10,7 +10,20 @@ import SwiftUI
 struct TitleText:ViewModifier,Animatable{
     func body(content: Content) -> some View {
         content
-            .font(.custom("Times New Roman", size: 28))
+            .font(.custom("Times New Roman", size:28))
+            
+
+            .foregroundColor(.white)
+            
+    }
+    
+    
+}
+
+struct menuItemName:ViewModifier,Animatable{
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size:40))
             
 
             .foregroundColor(.white)

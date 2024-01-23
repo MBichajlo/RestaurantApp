@@ -50,6 +50,12 @@ class EmployeesViewModel:menuListProtocol{
     //MARK: - Menu Items Variables
     @Published var detailsSheetVisible = false
     @Published var currentMenuItem:MenuItem?
+    @Published var currentMenuItemIngredients:[Ingredient]?
+    //new menu item
+    @Published var newMenuItemName = ""
+    @Published var newMenuItemPrice:Double = 0
+    @Published var newMenuItemIngredients:[Ingredient]=[]
+    @Published var newMenuItemSheet = false
     
     
     //MARK: - Login Functions
@@ -64,7 +70,18 @@ class EmployeesViewModel:menuListProtocol{
     
     //MARK: - Menu Items Functions
     
+    func changeCurrentItem(item: MenuItem){
+        currentMenuItem = item
+        currentMenuItemIngredients = Array(item.ingredient as? Set<Ingredient> ?? [])
+    }
     
+    func addAndRemoveIngredient(ingredient:Ingredient){
+        if newMenuItemIngredients.contains(ingredient){
+            newMenuItemIngredients.removeAll(where: {$0 == ingredient})
+        }else{
+            newMenuItemIngredients.append(ingredient)
+        }
+    }
     
     
     

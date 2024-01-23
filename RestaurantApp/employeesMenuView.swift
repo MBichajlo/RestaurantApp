@@ -35,7 +35,7 @@ struct employeesMenuView: View {
             Grid(horizontalSpacing: 20, verticalSpacing: 20){
                 GridRow{
                     NavigationLink {
-                        EmptyView()
+                        menuList()
                     } label: {
                         Tile(category: "Appetizers",color: colorDark)
                     }
@@ -61,7 +61,14 @@ struct employeesMenuView: View {
             
         }
         
-        }   .searchable(text: $model.searchQuery,isPresented: $model.searching)
+        }   
+        .searchable(text: $model.searchQuery,isPresented: $model.searching)
+        .onAppear{
+            let coloredNavAppearence = UINavigationBarAppearance()
+            coloredNavAppearence.configureWithDefaultBackground()
+            coloredNavAppearence.backgroundColor = UIColor(Color.customLightBlue)
+            UINavigationBar.appearance().standardAppearance=coloredNavAppearence
+        }
     }
 }
 

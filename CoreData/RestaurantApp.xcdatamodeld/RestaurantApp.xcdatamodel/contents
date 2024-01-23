@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B92" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Category" representedClassName=".Category" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="menu_item" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuItem" inverseName="category" inverseEntity="MenuItem"/>
-    </entity>
     <entity name="Ingredient" representedClassName=".Ingredient" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -12,11 +7,11 @@
         <relationship name="menu_item" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuItem" inverseName="ingredient" inverseEntity="MenuItem"/>
     </entity>
     <entity name="MenuItem" representedClassName=".Item" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" customClassName="Category"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="orders" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="menu_item" inverseEntity="Category"/>
         <relationship name="ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="menu_item" inverseEntity="Ingredient"/>
     </entity>
 </model>
