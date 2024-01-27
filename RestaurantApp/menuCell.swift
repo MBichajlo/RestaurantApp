@@ -11,7 +11,7 @@ struct menuCell: View {
     let screensizeW = UIScreen.main.bounds.size.width
     
     let menuItem:MenuItem?
-    @EnvironmentObject var model:EmployeesViewModel
+    @EnvironmentObject var model:EmployeesMenuViewModel
     @State var dropDown:Bool = false
     //let index:Int
     var body: some View {
@@ -54,6 +54,7 @@ struct menuCell: View {
             }
             
         }
+        
         .frame(width: screensizeW*0.9,height: dropDown ? 200 : 60)
         //.background(Color.red)
         .animation(.default, value: dropDown)

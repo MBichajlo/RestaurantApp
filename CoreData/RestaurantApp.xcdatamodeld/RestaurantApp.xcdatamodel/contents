@@ -6,7 +6,7 @@
         <attribute name="stock" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="menu_item" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuItem" inverseName="ingredient" inverseEntity="MenuItem"/>
     </entity>
-    <entity name="MenuItem" representedClassName=".Item" syncable="YES">
+    <entity name="MenuItem" representedClassName=".MenuItem" syncable="YES">
         <attribute name="category" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>

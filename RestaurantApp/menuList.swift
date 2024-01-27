@@ -11,7 +11,10 @@ struct menuList: View {
     let screensizeH = UIScreen.main.bounds.size.height
     let screensizeW = UIScreen.main.bounds.size.width
     
-    @EnvironmentObject var model:EmployeesViewModel
+   // @EnvironmentObject var model:EmployeesViewModel
+    @StateObject var model = EmployeesMenuViewModel()
+    
+    let category: menuItemCategory
     var body: some View {
         
         NavigationStack {
@@ -19,13 +22,12 @@ struct menuList: View {
                 Color.customLightBlue.ignoresSafeArea()
                 VStack {
                     List{
-                        ForEach(1..<100){ingredient in
-                            menuCell(menuItem: .none)
+                        ForEach(model.menuItems,id:\.id){menuItem in
+                            menuCell(menuItem: menuItem)
                                 .frame(height: 50)
-                            
-                                
+                                .environmentObject(model)
                         }
-                        //.onDelete(perform:model.deleteIngredient)
+                        .onDelete(perform: model.deleteMenuItem)
                         .listRowBackground(
                             RoundedRectangle(cornerRadius: 10)
                                 .strokeBorder(Color.customDarkBlue,lineWidth: 3)
@@ -39,6 +41,7 @@ struct menuList: View {
                         
                    
                     }.scrollContentBackground(.hidden)
+                        .padding(.top,0.3)
                     
                     HStack{
                         Spacer()
@@ -65,7 +68,9 @@ struct menuList: View {
                     
                 }
             }
-        }.sheet(isPresented: $model.detailsSheetVisible, content: {
+            
+        }.navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $model.detailsSheetVisible, content: {
             ZStack{
                 Color.customLightBlue
                     .ignoresSafeArea()
@@ -73,7 +78,7 @@ struct menuList: View {
                     Text(model.currentMenuItem?.name ?? "Error")
                         .modifier(menuItemName())
                     HStack{
-                        Text("Price: \(model.currentMenuItem?.price ?? 0)")
+                        Text("Price: \(model.currentMenuItem?.price ?? 0,specifier: "%.0f") $ ")
                         Spacer()
                         Text("Ordered \(model.currentMenuItem?.orders ?? 0) times ")
                     }
@@ -143,7 +148,7 @@ struct menuList: View {
                     .scrollContentBackground(.hidden)
                     
                     Button{
-                        
+                        model.saveMenuItem()
                     }label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 15)
@@ -158,9 +163,11 @@ struct menuList: View {
             }
             .presentationContentInteraction(.scrolls)
             .presentationDetents([.medium,.large])
-            .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+           // .presentationBackgroundInteraction(.enabled(upThrough: .medium))
         })
         .onAppear{
+            model.currentCategory = category
+            model.newMenuCategoru = category
             model.fetchMenuItems()
             model.fetchIngredients()
         }
@@ -168,5 +175,5 @@ struct menuList: View {
 }
 
 #Preview {
-    menuList().environmentObject(EmployeesViewModel())
+    menuList(category: .mainCourse)//.environmentObject(EmployeesViewModel())
 }

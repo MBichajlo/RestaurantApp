@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ingredientsCell: View {
     
-    @EnvironmentObject var model:EmployeesViewModel
+    @EnvironmentObject var model:employeesIngredientViewModel
     let screensizeW = UIScreen.main.bounds.size.width
     
     let ingredient:Ingredient
@@ -57,7 +57,7 @@ struct ingredientsCell: View {
             
         }
         .frame(width: screensizeW*0.9,height: 60)
-       // .background(Color.red)
+      //  .background(Color.red)
         .listRowSpacing(5)
         
         
@@ -66,5 +66,5 @@ struct ingredientsCell: View {
 
 #Preview {
     ingredientsCell(ingredient: Ingredient(context: PersistenceController.shared.container.viewContext))
-        .environmentObject(EmployeesViewModel())
+        .environmentObject(employeesIngredientViewModel())
 }

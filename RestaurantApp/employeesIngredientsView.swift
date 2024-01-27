@@ -11,8 +11,8 @@ struct employeesIngredientsView: View {
     let screensizeH = UIScreen.main.bounds.size.height
     let screensizeW = UIScreen.main.bounds.size.width
     
-    @EnvironmentObject var model:EmployeesViewModel
-   
+    //@EnvironmentObject var model:EmployeesViewModel
+    @StateObject var model = employeesIngredientViewModel()
     var body: some View {
         
           
@@ -22,7 +22,7 @@ struct employeesIngredientsView: View {
                 VStack {
                     List{
                         ForEach(model.filteredIngredients,id: \.id){ingredient in
-                            ingredientsCell(ingredient: ingredient)
+                            ingredientsCell(ingredient: ingredient).environmentObject(model)
                                 //.frame(height: 50)
                                 
                         }
@@ -102,5 +102,5 @@ struct employeesIngredientsView: View {
 
 #Preview {
     employeesIngredientsView()
-        .environmentObject(EmployeesViewModel())
+            //.environmentObject(EmployeesViewModel())
 }

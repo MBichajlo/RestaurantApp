@@ -97,6 +97,16 @@ class EmployeesViewModel:menuListProtocol{
         newMenuItem.id=UUID()
         newMenuItem.orders=0
         save()
+        fetchMenuItems()
+    }
+    
+    func deleteMenuItem(offsets: IndexSet){
+        for index in offsets{
+            let item=menuItems[index]
+            context.delete(item)
+        }
+        save()
+        fetchMenuItems()
         
     }
     
@@ -136,7 +146,7 @@ class EmployeesViewModel:menuListProtocol{
     
     func deleteIngredient(_ offsets:IndexSet){
         for index in offsets{
-            let ingr = ingredients[index]
+            let ingr = filteredIngredients[index]
             context.delete(ingr)
         }
         

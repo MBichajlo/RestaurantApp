@@ -19,7 +19,7 @@ enum ViewCategory:String{
 
 
 struct employeesMenuView: View {
-    @EnvironmentObject var model:EmployeesViewModel
+    //@EnvironmentObject var model:EmployeesViewModel
     
     let screensizeH = UIScreen.main.bounds.size.height
     let screensizeW = UIScreen.main.bounds.size.width
@@ -35,24 +35,24 @@ struct employeesMenuView: View {
             Grid(horizontalSpacing: 20, verticalSpacing: 20){
                 GridRow{
                     NavigationLink {
-                        menuList()
+                        menuList(category: .appetizers)
                     } label: {
                         Tile(category: "Appetizers",color: colorDark)
                     }
                     NavigationLink {
-                        EmptyView()
+                        menuList(category: .mainCourse)
                     } label: {
                         Tile(category: "Main Dishes",color: colorDark)
                     }
                 }
                 GridRow{
                     NavigationLink {
-                        EmptyView()
+                        menuList(category: .soups)
                     } label: {
                         Tile(category: "Soups",color: colorDark)
                     }
                     NavigationLink {
-                        EmptyView()
+                        menuList(category: .drinks)
                     } label: {
                         Tile(category: "Drinks",color: colorDark)
                     }
@@ -61,18 +61,20 @@ struct employeesMenuView: View {
             
         }
         
-        }   
-        .searchable(text: $model.searchQuery,isPresented: $model.searching)
+        }
+           
+        //.searchable(text: $model.searchQuery,isPresented: $model.searching)
         .onAppear{
             let coloredNavAppearence = UINavigationBarAppearance()
             coloredNavAppearence.configureWithDefaultBackground()
             coloredNavAppearence.backgroundColor = UIColor(Color.customLightBlue)
             UINavigationBar.appearance().standardAppearance=coloredNavAppearence
         }
+       // .searchable(text: $model.searchQuery)
     }
 }
 
 #Preview {
     employeesMenuView()
-        .environmentObject(EmployeesViewModel())
+        //.environmentObject(EmployeesViewModel())
 }

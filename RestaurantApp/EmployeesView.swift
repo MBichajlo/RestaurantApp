@@ -111,6 +111,7 @@ struct EmployeesView: View {
                     
                     
                 }
+                
             }
             .frame(width: topViewModel.currentState == .employees ? screensize: screensize/2)
         
