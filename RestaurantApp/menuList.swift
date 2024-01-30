@@ -23,7 +23,7 @@ struct menuList: View {
                 VStack {
                     List{
                         ForEach(model.menuItems,id:\.id){menuItem in
-                            menuCell(menuItem: menuItem)
+                            EmployeesMenuCell(menuItem: menuItem)
                                 .frame(height: 50)
                                 .environmentObject(model)
                         }
