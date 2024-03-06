@@ -5,6 +5,13 @@
 //  Created by Maciej Bichajło on 27/01/2024.
 //
 
+enum saveMenuItemErrors:String,Error{
+    case nameTaken = "Name already taken"
+    case nameEmpty = "No give name "
+    case noIngredients = "At least 1 ingredient needed"
+    case noPrice = "You must enter a price"
+}
+
 import SwiftUI
 import CoreData
 
@@ -36,16 +43,18 @@ class EmployeesMenuViewModel:ObservableObject{
         }
     }
     
-    func saveMenuItem(){
+    func saveMenuItem() {
         let newMenuItem = MenuItem(context: context)
         newMenuItem.name = newMenuItemName
         newMenuItem.price = newMenuItemPrice
         newMenuItem.category = newMenuCategoru
+        
         for i in newMenuItemIngredients{
             newMenuItem.addToIngredient(i)
         }
         newMenuItem.id=UUID()
         newMenuItem.orders=0
+        
         save()
         fetchMenuItems()
     }

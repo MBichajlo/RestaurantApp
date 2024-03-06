@@ -32,3 +32,15 @@ struct menuItemName:ViewModifier,Animatable{
     
     
 }
+struct appName:ViewModifier,Animatable{
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size:40))
+            
+
+            .foregroundColor(.white)
+            
+    }
+    
+    
+}

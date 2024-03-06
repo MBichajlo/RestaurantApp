@@ -28,8 +28,16 @@ struct loginScreen: View {
                 .autocorrectionDisabled(true)
             
             Button{
-                if model.login(){
-                    topViewModel.login()
+                do{
+                    if try model.login(){
+                        topViewModel.login()
+                    }
+                }catch loginErrors.wrongPassword,loginErrors.wrongUsername{
+                    model.incorrect=true
+                }catch loginErrors.emptyFields{
+                    model.empty = true
+                }catch{
+                    model.generic = true
                 }
                 
             }label:{
@@ -46,6 +54,13 @@ struct loginScreen: View {
             
                         
         }.frame(width:300,alignment: .center)
+            .alert("Wrong password or username", isPresented: $model.incorrect, actions: {
+                Button("Ok", role: .destructive, action: {})
+            })
+            .alert("Empty Field", isPresented: $model.empty, actions: {
+                Button("Ok", role: .destructive, action: {})
+            })
+    
     }
 }
 

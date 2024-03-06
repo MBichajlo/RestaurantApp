@@ -27,7 +27,7 @@ struct EmployeesMenuCell: View {
                     
                     Spacer()
                     Button{
-                        withAnimation(.linear(duration: 0.2), {
+                        withAnimation(.snappy, {
                             model.detailsSheetVisible = true
                             model.currentMenuItem = menuItem
                             
@@ -91,7 +91,7 @@ struct ClientsMenuCell: View {
                     
                     Spacer()
                     Button{
-                        withAnimation(.linear(duration: 0.2), {
+                        withAnimation(.snappy, {
                             model.detailsSheetVisible = true
                             model.currentMenuItem = menuItem
                             

@@ -13,6 +13,7 @@ struct menuList: View {
     
    // @EnvironmentObject var model:EmployeesViewModel
     @StateObject var model = EmployeesMenuViewModel()
+    @Environment(\.dismiss) var dismiss
     
     let category: menuItemCategory
     var body: some View {
@@ -149,6 +150,8 @@ struct menuList: View {
                     
                     Button{
                         model.saveMenuItem()
+                        model.newMenuItemSheet = false 
+                        
                     }label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 15)

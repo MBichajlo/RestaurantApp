@@ -47,7 +47,10 @@ struct ClientsMenuList: View {
                     
                     
                 }
-            }.searchable(text: $model.searchQuery)
+            }
+            .searchable(text: $model.searchQuery, tokens: $model.selectedTokens, token: {token in
+                Text(token.rawValue)
+            })
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
             
